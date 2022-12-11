@@ -3,15 +3,23 @@ package no.shoppifly;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
+import java.util.concurrent.atomic.LongAdder;
 
 @Component
 class NaiveCartImpl implements CartService {
 
     private final Map<String, Cart> shoppingCarts = new HashMap<>();
 
+    private final LongAdder numShoppingCartsCheckedOut = new LongAdder();
+
     @Override
     public Cart getCart(String id) {
         return shoppingCarts.get(id);
+    }
+
+    @Override
+    public long getNumShoppingCartsCheckedOut() {
+        return this.numShoppingCartsCheckedOut.longValue();
     }
 
     @Override
@@ -25,6 +33,7 @@ class NaiveCartImpl implements CartService {
 
     @Override
     public String checkout(Cart cart) {
+        numShoppingCartsCheckedOut.increment();
         shoppingCarts.remove(cart.getId());
         return UUID.randomUUID().toString();
     }
@@ -35,6 +44,7 @@ class NaiveCartImpl implements CartService {
     }
 
     // @author Jim; I'm so proud of this one, took me one week to figure out !!!
+    @Override
     public float total() {
         return shoppingCarts.values().stream()
                 .flatMap(c -> c.getItems().stream()
