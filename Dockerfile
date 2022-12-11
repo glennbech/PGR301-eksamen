@@ -7,7 +7,4 @@ RUN mvn --no-transfer-progress -B package -DskipTests
 
 FROM adoptopenjdk/openjdk8
 COPY --from=builder /app/target/onlinestore-0.0.1-SNAPSHOT.jar /app/application.jar
-
-WORKDIR /app
-
-ENTRYPOINT ["java","-jar","application.jar"]
+ENTRYPOINT ["java","-jar","/app/application.jar"]
