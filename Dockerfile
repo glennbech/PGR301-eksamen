@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11 as builder
+FROM maven:3.6-jdk-11 as builder
 
 COPY pom.xml /app/pom.xml
 COPY src /app/src
