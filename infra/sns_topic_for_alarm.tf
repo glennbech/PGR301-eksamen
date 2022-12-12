@@ -1,10 +1,10 @@
 resource "aws_cloudwatch_metric_alarm" "over5alarm" {
   alarm_name                = "cartk-sum-must-be-over-5"
   namespace                 = var.candidate_id
-  metric_name               = "cart.value"
+  metric_name               = "carts.value"
 
   comparison_operator       = "GreaterThanThreshold"
-  threshold                 = "0"
+  threshold                 = "5"
   evaluation_periods        = "3"
   period                    = "300"
 
