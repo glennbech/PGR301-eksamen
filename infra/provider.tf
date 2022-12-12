@@ -6,4 +6,9 @@ terraform {
     }
   }
 
+  backend "s3" {
+    bucket = "analytics-1028"
+    key    = "shoplify"
+    region = "eu-west-1"
+  }
 }
