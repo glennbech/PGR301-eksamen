@@ -8,6 +8,8 @@ Ut ifra et DevOps perspektiv, kan det være problematisk å redusere frekvensen 
 
 En bedre tilnærming kan være å bruke DevOps-prinsipper som kontinuerlig levering og kontinuerlig integrasjon og deploy. Dette innebærer at endringer i koden blir lagt til og testet kontinuerlig, slik at enkeltendringer kan deployes i mindre og mer overkommelige batcher. Dette kan bidra til å øke stabiliteten, da endringer i koden blir testet og integrert kontinuerlig, i stedet for å vente til store batcher av kode skal deployes.
 
+
+
 En utfordring med at utviklingsteamet overleverer kode til en annen avdeling som har ansvar for drift, er at det kan føre til en dårligere sammenkobling mellom utvikling- og driftsavdelingen. Dette kan føre til at utviklingsteamet ikke har god nok oversikt over driftsmiljøet og ikke kan ta hensyn til driftskrav og begrensninger når de utvikler kode. Dette kan også føre til at driftsavdelingen ikke har god nok innsikt i hvordan koden fungerer og kan føre til problemer når den skal deployes.
 
 En bedre tilnærming kan være å ha et team som har ansvar for både utvikling og drift. Dette kan bidra til å styrke samarbeidet mellom avdelingene og øke forståelsen for hverandres behov og utfordringer. Dette kan også bidra til å redusere tiden det tar å deploye kode, da teamet kan jobbe med både utvikling og drift samtidig.
